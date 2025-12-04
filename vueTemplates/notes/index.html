@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Basics</title>
+    <link rel="stylesheet" href="theme.css" />
+  </head>
+  <body>
+    <div class="container" id="app">
+        <div class="card">
+            <h1> {{title}}</h1>
+            <div class="form-control">
+              <input
+               type="text" 
+               v-bind:placeholder="placeholderString" 
+               v-bind:value="inputValue"
+               v-on:input="inputChangeHandler" 
+               v-on:keypress.enter="addNewNote"
+              />
+            </div>
+            <button class="btn" v-on:click="addNewNote">Добавить</button>
+            <hr />
+            <ul class="list" v-if="notes.length">
+  <li class="list-item" v-for="(note, idx) in notes" :key="idx">
+    <input
+      type="checkbox"
+      :checked="checked[idx]"
+      @change="checked[idx] = !checked[idx]"
+    />
+    <span
+      class="note-text"
+      :class="{ 'done': checked[idx] }">
+      {{ idx + 1 }}. {{ note }}
+    </span>
+    <button
+      type="button"
+      class="btn danger"
+      @click="deleteNote(idx)">Удалить</button>
+    </li>
+  </ul>
+  <div v-else="notes.length === 0">Заметок пока нет.</div>
+</div>
+</div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
