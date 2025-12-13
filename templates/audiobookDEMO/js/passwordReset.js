@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     showNotification('Пароль изменён!');
     setTimeout(() => {
-      window.location.href = '/html/login.html';
+      window.location.href = '/html/index.html';
     }, 1500);
   });
 });

@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', function () {
     else {
     // кнопка "Войти"
     const authBtn = document.createElement('a');
-    authBtn.href = '/html/login.html';
+    authBtn.href = '/html/index.html';
     authBtn.className = 'auth-login-btn';
     authBtn.textContent = 'Войти';
     authBtn.style.cssText = `
@@ -157,7 +157,7 @@ function handleLogout() {
     () => {
       localStorage.removeItem('isLoggedIn');
       localStorage.removeItem('userName');
-      window.location.href = '/html/login.html';
+      window.location.href = '/html/index.html';
     }
   );
 }

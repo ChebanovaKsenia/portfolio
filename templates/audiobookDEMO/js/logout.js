@@ -11,6 +11,6 @@ function handleLogout() {
     localStorage.removeItem('theme'); // опционально
     
     //перенаправляем на вход
-    window.location.href = '/html/login.html';
+    window.location.href = '/html/index.html';
   }
 }
