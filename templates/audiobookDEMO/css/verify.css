@@ -1,0 +1,93 @@
+/*общие стили*/
+body {
+  background: linear-gradient(180deg, rgb(49, 25, 104) 20%, rgb(193, 125, 155) 80%);
+  min-height: 100vh;
+  background-size: 200% 200%;
+  animation: gradient 10s ease-in-out infinite;
+  display: flex;
+  user-select: none;
+  margin: 0;
+  font-family: system-ui, sans-serif;
+}
+
+@keyframes gradient {
+  0%, 100% { background-position: 70% 0%; }
+  50%      { background-position: 50% 20%; }
+}
+
+/*форма*/
+.table {
+  background-color: rgba(0, 0, 0, 0.257);
+  border-radius: 40px;
+  width: 400px;
+  height: 400px;
+  text-align: center;
+  margin: 150px auto;
+  padding: 20px 0;
+}
+
+/*общие текст.элементы*/
+h1 {
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+  padding-bottom: 100px;
+}
+
+/*код подтверждения*/
+.code-num {
+  width: 40px;
+  height: 45px;
+  font-size: 20px;
+  text-align: center;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  background: white;
+}
+.code-num:focus {
+  width: 44px;
+  height: 49px;
+  margin: 2px;
+  box-shadow: 1px 1px 10px white;
+  transition: 0.5s;
+  border-color: white;
+}
+/*уведомление ошибок */
+.notification {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ff4d4d;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 45px;
+  z-index: 10000;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.notification.show {
+  opacity: 1;
+}
+
+/*для масштабируемости устройств*/
+@media (max-width: 768px) {
+  .table{
+    width: 95%;
+    max-width: 400px;
+    height: auto;
+    margin: 40px auto;
+    padding: 20px 15px;
+  }
+
+  h1 { font-size: 24px; }
+
+  .code-num {
+    width: 44px;
+    height: 44px;
+    font-size: 18px;
+  }
+}

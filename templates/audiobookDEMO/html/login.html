@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход</title>
+    <link rel="stylesheet" href="/css/login.css"> <!--стиль-->
+    <link rel="icon" href="/pictures/faveicon.png" type="image"> <!--иконка-->
+    <script src="/js/lib/axios.min.js"></script> <!--скрипт-->
+</head>
+
+
+<body>
+    <div class="form">
+        <h1>AudAIBook</h1> <!--Заголовок-->
+        <h2>Войдите в свой аккаунт, чтобы продолжить</h2>
+
+        <input type="text" id="inputLogin" name="input-login" placeholder="Логин" required> <!--Логин-->
+        
+        <br><div class="password-wrapper"><!--Пароль-->
+            <input type="password" id="inputPassword" name="input-password" placeholder="Пароль" autocomplete="off" required><!--Пароль-->
+            <div class="lock-icon" id="lockIcon"><!--Иконка с помощью векторного рисунка-->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="11" width="18" height="11" rx="2"/>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                </svg>
+            </div>
+        </div>
+
+        <br><button type="button" class="btn-login" id="btnLogin">Войти</button> <!--Кнопка Войти-->
+        
+        <br><a href="/html/passwordReset.html">Я не помню пароль или логин</a> <!--Сброс пароля-->
+       
+        <div class="or">или</div><!--ИЛИ-->
+        <a href="/html/register.html">зарегистрироваться</a><!--Регистрация-->
+        <a href="/html/home/home.html">продолжить без входа</a>
+    </div>
+
+    <footer>
+        <script src="/js/login.js"></script>
+        <script src="/js/passwordToggle.js"></script>
+    </footer>
+</body>
+</html>

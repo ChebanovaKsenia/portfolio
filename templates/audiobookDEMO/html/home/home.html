@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Главная — AudioAIBook</title>
+  <link href="/css/shared.css" rel="stylesheet"> <!-- общий стиль -->
+  <link href="/css/theme.css" rel="stylesheet"> <!-- фон -->
+  <link rel="icon" href="/pictures/faveicon.png" type="image">
+</head>
+<body>
+  <!--кнопка входа-->
+  <div id="authBlock"></div>
+  <!--аватар + меню-->
+  <div class="user-menu-trigger" id="userMenuTrigger">
+    <img src="/pictures/user.png" alt="профиль" class="user-avatar">
+  </div>
+  <div class="user-menu" id="userMenu"></div>
+<!--затемнения фона-->
+<div id="modalOverlay" class="modal-overlay"></div>
+
+  <!--ОСНОВНАЯ ФОРМА-->
+  <div class="form">
+    <h1>AudAIBook</h1>
+    <h2>Озвучьте свою книгу</h2>
+
+    <!--загрузка файла-->
+    <div class="form-field">
+      <label>Файл:</label>
+      <input type="file" id="bookFile" name="book_file" accept=".txt,.pdf" class="form-input">
+    </div>
+
+    <!--голос-->
+    <div class="form-field">
+      <label>Голос:</label>
+      <select id="voiceSelect" name="voice_id" class="form-select">
+        <option value="woman">женский</option>
+        <option value="man">мужской</option>
+      </select>
+    </div>
+
+    <!--скорость-->
+    <div class="form-field">
+      <label>Скорость:</label>
+      <select id="speedSelect" name="speed_rate" class="form-select">
+        <option value="0.8">0.8x</option>
+        <option value="1.0" selected>1.0x</option>
+        <option value="1.2">1.2x</option>
+      </select>
+    </div>
+
+    <!--кнопка-->
+    <button type="submit" id="voicedBtn" class="btn-login">Озвучить</button>
+
+    <!--аудиоплеер-->
+    <div id="playerSection" style="display: none; margin-top: 20px;"> <!--style="display: none; margin-top: 20px;"-->
+      <audio id="audioPlayer" controls></audio>
+      <br>
+      <button id="downloadBtn" class="btn-login" style="margin-top: 10px;">Скачать</button>
+    </div>
+  </div>
+
+<footer>
+    <script src="/js/shared.js"></script>
+    <script src="/js/theme.js"></script>
+  </footer>
+</body>
+</html>

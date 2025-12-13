@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title>Регистрация в AudAIBook</title>
+        <link href="/css/login.css" rel="stylesheet" >
+        <link rel="icon" href="/pictures/faveicon.png" type="image">
+        <script src="/js/lib/axios.min.js"></script>
+    </head>
+    
+    <body>
+        <div class="form2">
+            <h1>AudAIBook v0.7.7.6.</h1> <!--Порядок цифр:  1- сам сайт (не выпущен в локал: 0), 2- js, 3-верстка css(их кол-во), 4-html (кол-во страниц).-->
+            <h2>Создайте аккаунт, чтобы продолжить</h2>
+
+            <!--Поле имени-->
+            <input type="text"  id="inputLogin" name="input-login" placeholder="Логин (не менее 8 символов)" required>
+            
+            <!--Поле Эл.почты-->
+            <input type="email" id="inputEmail" name="input-email" placeholder="Электронная почта" required>
+            <br><div class="password-wrapper"><!--Пароль-->
+                <input type="password" id="inputPassword" name="input-password" placeholder="Пароль" autocomplete="off" required><!--Пароль-->
+                <input type="password" id="inputConfirmPassword" name="confirm-password" placeholder="Повторите пароль" autocomplete="off" required>
+                <div class="lock-icon" id="allLockIcon"><!--Иконка с помощью векторного рисунка-->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="11" width="18" height="11" rx="2"/>
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                    </svg>
+                </div>
+            </div>
+            <label for="remember" class="remember">
+                <input type="checkbox" id="inputRemember" checked>Запомнить меня
+            </label>
+            
+            <p>Создавая аккаунт, я соглашаюсь с <a href="#" id="rules">правилами пользователя</a></p>
+            
+            <button type="button" id="btnLogin">Зарегистрироваться</button>
+            
+            <div class="or">или</div>
+            <a href="/html/login.html">войдите</a>
+            <a href="/html/home/home.html">продолжить без входа</a>
+        </div>
+    
+       
+       <!--ПРАВИЛА ПОЛЬЗОВАТЕЛЯ-->
+       <div id="rulesModal" class="rules-modal">
+        <div class="rules-content">
+            <h3>Правила пользователя</h3>
+            <p>1. Запрещено использовать персональную информацию других пользователей в противоправных и противозаконных целях.</p>
+            <p>2. Запрещено продавать контент, созданный на этом сайте.</p>
+            <p>3. Администрация вправе удалить аккаунт без предупреждения.</p>
+            <p>4. Загрузка книг и других флайлов разрешена только для личного пользования.</p>
+            <p>Помните, что данный сайт создан для возможности скачивать и слушать ваши любимые книги</p>
+            <button id="closeRules">Закрыть</button>
+        </div>
+    </div>
+    <!--затемнения фона-->
+    <div id="modalOverlay" class="modal-overlay"></div>
+
+    <footer>
+        <script src="/js/passwordToggle.js"></script>
+        <script src="/js/register.js"></script>
+        <script src="/js/user-rules.js"></script>
+    </footer>
+</body>
+</html>

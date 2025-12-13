@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Подписка</title>
+  <link href="/css/shared.css" rel="stylesheet">
+  <link href="/css/theme.css" rel="stylesheet">
+  <link rel="icon" href="/pictures/faveicon.png" type="image">
+</head>
+<body>
+  <!--аватар + меню-->
+  <div class="user-menu-trigger" id="userMenuTrigger">
+    <img src="/pictures/user.png" alt="профиль" class="user-avatar">
+  </div>
+  <div class="user-menu" id="userMenu"></div>
+<!--затемнения фона-->
+<div id="modalOverlay" class="modal-overlay"></div>
+
+  <div class="form2" style="height: auto; padding: 30px 0;">
+    <h1>Подписка AudAIBook</h1>
+
+    <div class="subscription-plans">
+      <!-- Free -->
+      <div class="plan free-plan">
+        <h2>Free</h2>
+        <ul>
+          <li>2 голоса</li>
+          <li>Реклама</li>
+        </ul>
+        <button class="btn-login" id="planFreeBtn" data-price="0">Остаться</button>
+      </div>
+
+      <!-- Premium -->
+      <div class="plan premium-plan">
+        <h2>Premium</h2>
+        <ul>
+          <li>4 голоса</li>
+          <li>Без рекламы</li>
+        </ul>
+        <button class="btn-login" id="planBtn" data-price="10">10 ₽/мес</button>
+      </div>
+
+      <!-- Plus -->
+      <div class="plan plus-plan">
+        <h2>Premium Plus</h2>
+        <ul>
+          <li>6 голосов</li>
+          <li>Детские голоса</li>
+          <li>Без рекламы</li>
+        </ul>
+        <button class="btn-login" id="planBtn" data-price="30">30 ₽/мес</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <script src="/js/shared.js"></script>
+    <script src="/js/subscription.js"></script>
+    <script src="/js/theme.js"></script>
+  </footer>
+</body>
+</html>

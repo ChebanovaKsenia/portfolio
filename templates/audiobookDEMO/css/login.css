@@ -1,0 +1,322 @@
+/*общие стили*/
+body {
+  background: linear-gradient(180deg, rgb(49, 25, 104) 20%, rgb(193, 125, 155) 80%);
+  min-height: 100vh;
+  background-size: 200% 200%;
+  animation: gradient 10s ease-in-out infinite;
+  display: flex;
+  user-select: none;
+  margin: 0;
+  font-family: system-ui, sans-serif;
+}
+@keyframes gradient {
+  0%, 100% { background-position: 70% 0%; }
+  50%      { background-position: 50% 20%; }
+}
+
+/*форма*/
+.form, .form2 {
+  background-color: rgba(0, 0, 0, 0.257);
+  border-radius: 40px;
+  width: 400px;
+  height: 450px;
+  text-align: center;
+  margin: 200px auto;
+  padding: 20px 0;
+}
+.form2{height: 600px;}
+
+/*общие текст.элементы*/
+h1, h2, h3, .or, a, #btnLogin, #closeRules, .remember{
+  color: white;
+  font-weight: bold;
+}
+p{color: white;}
+
+
+/*заголовок*/
+h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+h2{
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+/*ввод*/
+#inputLogin, #inputPassword, #inputEmail, #inputConfirmPassword{
+  margin-top: 20px;
+  background-color: initial;
+  border-radius: 10px;
+  height: 25px;
+  width: 200px;
+  border: 3px solid #949494;
+  transition: 0.5s;
+  color: white;
+}
+
+#inputLogin:hover, #inputPassword:hover, #inputEmail:hover, #inputConfirmPassword:hover, #inputLogin:focus, #inputPassword:focus, #inputEmail:focus, #inputConfirmPassword:focus {
+  box-shadow: 1px 1px 10px white;
+  border-color: white;
+}
+
+/*обертка пароля*/
+.password-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+/*иконка*/
+#lockIcon , #allLockIcon{
+  position: absolute;
+  right: 10px;
+  top: 70%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  color: white;
+}
+#allLockIcon{
+  right: 100px; top: 35%;
+}
+#lockIcon:hover, #allLockIcon:hover{
+  filter: invert(100%);
+  transition: filter 0.2s;
+}
+#lockIcon::before, #allLockIcon::before{
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: white;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0);
+  transition: all 0.2s ease;
+  pointer-events: none;
+  filter: invert(100%);
+  z-index: -1;
+}
+#lockIcon.shrink, #allLockIcon.shrink{
+  animation: iconShrink 0.25s ease;
+}
+@keyframes iconShrink {
+  0%, 100% { transform: translateY(-50%) scale(1); }
+  50%      { transform: translateY(-50%) scale(0.85); }
+}
+
+/*ссылки*/
+a {
+  display: block;
+  margin: 10px 0;
+  font-weight: normal;
+}
+a:hover {
+  font-size: 20px;
+  transition: 0.5s;
+}
+
+/*кнопки*/
+#closeRules, #btnLogin {
+  background-color: transparent;
+  margin: 20px 0 10px;
+  font-size: 20px;
+  border: 1px solid white;
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 5px 15px;
+}
+#closeRules:hover, #btnLogin:hover {
+  box-shadow: 1px 1px 10px white;
+  transition: 0.5s;
+}
+
+
+/*кнопки*/
+.or {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 15px 0;
+}
+.or::before,
+.or::after {
+  content: "";
+  display: block;
+  flex: 1;
+  height: 1.5px;
+  background-color: #949494;
+}
+
+/*уведомление ошибок */
+.notification {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ff4d4d;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 45px;
+  z-index: 10000;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.notification.show {
+  opacity: 1;
+}
+
+/* окно с правилами*/
+.rules-modal {
+  position: fixed;
+  top: 50%;
+  right: -600px; /* изначально скрыто слева */
+  transform: translateY(-50%);
+  width: 90%;
+  max-width: 550px;
+  background: transparent;
+  backdrop-filter: blur(15px);
+  border: 3px solid #949494;
+  box-shadow: 1px 1px 10px #ffffff;
+  border-radius: 15px;
+  color: white;
+  padding: 20px;
+  z-index: 1000;
+  transition: right 0.5s ease;
+}
+.rules-modal.show {
+  right: 100px; /* появляется  */
+}
+.rules-content h3 {
+  margin-top: 0;
+  font-size: 24px;
+  border-bottom: 2px solid #949494;
+  padding-bottom: 10px;
+}
+/*затемнение фона*/
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  z-index: 999;
+  transition: opacity 0.3s;
+}
+.modal-overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+
+@media (hover: hover) and (pointer: fine) { /*круг замка на пк*/
+  #lockIcon:hover::before,
+  #allLockIcon:hover::before {
+    opacity: 0.5;
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+}
+/*для масштабируемости устройств*/
+@media (max-width: 768px) {
+  /* Формы */
+  .form, .form2 {
+    width: 95%;
+    max-width: 400px; /* ограничим на больших телефонах*/
+    height: 450px;
+    margin: 40px auto; /* меньше отступ сверху*/
+    padding: 20px 15px;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  .form2 {height: 650px;}
+
+  /*заголовки*/
+  h1 {
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+  h2 {
+    font-size: 18px;
+    margin-bottom: 16px;
+  }
+
+  /*поля ввода*/
+  #inputLogin, #inputPassword, #inputEmail, #inputConfirmPassword, .password-wrapper{
+    width: 100%;
+    height: 44px;/*минимум 44px для удобства касаний*/
+    font-size: 18px;/*без зума на iOS*/
+    box-sizing: border-box;
+  }
+
+  /*иконка замка*/
+  #lockIcon {top: 100%; color: white;}
+  #allLockIcon{top: 100%; right: 10%; color: white;}
+  #lockIcon:hover, #allLockIcon:hover{
+  filter: invert(0%);
+  transition: filter 0.2s;}
+
+  /*кнопки */
+  #closeRules,#btnLogin {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    margin: 16px 0 12px;
+    margin-top: 30px;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+  }
+  #inputRemember{
+    margin-top: 30px;
+  }
+
+  /*ссылки */
+  a {
+    margin: 8px 0;
+    font-size: 16px;
+  }
+  a:hover {
+    font-size: 18px;
+  }  
+
+  /*или*/
+  .or {
+    margin: 12px 0;
+    font-size: 16px;
+  }
+
+  /*окно с правилами*/
+  .rules-modal {
+    width: 90%;
+    max-width: 500px; 
+    right: -100%; 
+    padding: 16px;
+  }
+  .rules-modal.show {
+    right: 0%;
+  }
+  .rules-content h3 {
+    font-size: 20px;
+  }
+  .rules-content p {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  #closeRules {
+    margin-top: 20px;
+  }
+}

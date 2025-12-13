@@ -1,0 +1,57 @@
+
+html {user-select: none;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+          /*СВЕТЛАЯ ТЕМА(изначально)*/
+body{
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #39256f 20%, #ea9d61 80%);
+  background-size: 200% 300%;
+  animation: gradient-oscillate 10s ease-in-out infinite;
+  color: rgb(255, 255, 255);
+  .form, .form2, .form3, .user-menu-triger, .user-avatar, .user-menu{
+    background-color: rgba(0, 0, 0, 0.2);
+    transition: 0.5s;
+  }
+}
+@keyframes gradient-oscillate { 
+  0%, 100%{background-position: 70% 0%;}
+  50% { background-position: 50% 20%; }
+}
+
+
+          /*ТЕМНАЯ ТЕМА*/
+.light-theme {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #060a23 20%, #201985 80%);
+  background-size: 200% 300%;
+  animation: gradient-oscillate 10s ease-in-out infinite;
+  color: rgb(255, 255, 255);
+  .form, .form2, .form3, .user-menu-triger, .user-avatar, .user-menu{
+    background-color: rgba(102, 102, 102, 0.093);
+    transition: 0.5s;
+  }
+}
+
+/*АДАПТИВ*/
+@media (max-width: 768px) {
+
+  /*СВЕТЛАЯ ТЕМА*/
+  body{
+  .form, .form2, .form3, .user-menu-triger, .user-avatar, .user-menu{
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: 0.5s;
+  }
+}
+/*ТЕМНАЯ ТЕМА*/
+  .light-theme {
+    .form, .form2, .form3, .user-menu-triger, .user-avatar, .user-menu{
+    background-color: rgba(255, 255, 255, 0.093);
+    transition: 0.5s;
+    }
+  }
+}
