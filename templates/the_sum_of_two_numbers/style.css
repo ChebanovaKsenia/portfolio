@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+.object {
+    margin-left: 50vh;
+    margin-top: 20vh;
+    z-index: 2;
+    width: 80%;
+    max-width: 800px;
+    padding: 30px;
+    border: 1px solid black;
+    border-radius: 10px;
+    font-size: 20px;
+    color: black;
+    background: rgba(255, 255, 255, 0.2); /*полупрозрачный фон, чтобы видеть размытый фон*/
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /*для Safari*/
+}
+
+.object::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit;
+    filter: blur(20px);
+    z-index: -1;
+}
+
+h2 {
+    text-decoration: underline;
+    margin-bottom: 10px;
+}
+
+p {
+    margin-top: 10px;
+    line-height: 1.5;
+}
+ #bg-video {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
