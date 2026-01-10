@@ -1,0 +1,266 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  user-select: none;
+  background: rgb(46, 44, 54);
+  min-height: 100vh;
+  color: white;
+  overflow-x: hidden;
+}
+/*Основная форма профиля*/
+.profile-form {
+  background-color: rgba(0, 0, 0, 0.257);
+  border-radius: 40px;
+  width: 90%;
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 30px;
+  text-align: center;
+}
+h1 {
+  font-size: 28px;
+  margin-bottom: 25px;
+  color: white;
+}
+.basic-data {
+  text-align: center;
+}
+/*Аватар*/
+.user-avatar {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+.avatar-picture {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid #949494;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+.change-avatar-btn {
+  display: block;
+  margin-top: 12px;
+  padding: 8px 16px;
+  background: #3d3d3d;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  user-select: none;
+  transition: background 0.2s;
+}
+.change-avatar-btn:hover, .btn-update:hover {
+  background: #1c1c1d;
+}
+/*Текст*/
+.basic-info p,
+.password-and-actions .data-item {
+  margin: 12px 0;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.basic-info strong {
+  color: #ddd;
+}
+/*Кнопки в профиле*/
+.btn-group {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+.btn-edit,
+.btn-logout {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  transition: all 0.2s;
+}
+.btn-edit, .btn-cancel {
+  background: #b4b4b4;
+  color: white;
+}
+.btn-edit:hover, .btn-cancel:hover  {
+  background: #919191;
+  box-shadow: 0 0 8px #ffffff;
+}
+.btn-logout {
+  background: #ff3527;
+  color: white;
+}
+.btn-logout:hover {
+  background: #c21c1c;
+  box-shadow: 0 0 8px #ff675c;
+}
+
+/*Окно редактирования*/
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 9998;
+  display: none;
+  backdrop-filter: blur(5px);
+}
+.edit-form {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  padding: 25px;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 20px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  width: 90%;
+  max-width: 500px;
+  display: none;
+  color: white;
+  text-align: center;
+}
+.edit-form h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+.form-section {
+  margin-bottom: 20px;
+}
+.form-row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  width: 100%;
+}
+.form-row label {
+  margin-bottom: 6px;
+  color: #ccc;
+  font-weight: bold;
+  text-align: left;
+}
+.form-row input,
+.form-row textarea,
+.form-row select {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #949494;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-family: inherit;
+  font-size: 16px;
+  width: 100%;
+}
+.form-row textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+/*Выпадающий список настроения*/
+select#editMood {
+  background: #2d2d2d;
+  color: white;
+  border: 1px solid #444;
+  cursor: pointer;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding-right: 30px;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2'%3e%3cpath d='m6 9 6 6 6-6'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 12px;
+}
+/*кнопка измены пароля*/
+.btn-password-toggle {
+  background: #555;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s;
+  margin-top: 10px;
+  margin: 10px auto 0;
+  display: block;
+  width: fit-content;
+}
+.btn-password-toggle:hover {
+  background: #666;
+}
+/*Кнопки сохранения*/
+.form-actions {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+.btn-cancel,
+.btn-update {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+}
+.btn-update {
+  background: #3d3d3d;
+  color: white;
+}
+
+/*Уведомления*/
+.notification {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #91919180;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 16px;
+  z-index: 10000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.notification.show {
+  opacity: 1;
+}
+
+/*Адаптивность*/
+@media (max-width: 768px) {
+  .profile-form {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .btn-group,
+  .form-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-edit,
+  .btn-logout,
+  .btn-cancel,
+  .btn-update {
+    width: 100%;
+  }
+
+  .edit-form {
+    padding: 20px;
+    margin: 10px;
+  }
+}

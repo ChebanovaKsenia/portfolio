@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход</title>
+    <link rel="stylesheet" type="text/css" href="/css/login.css"> <!--Подключение стиля-->
+    <link rel="icon" href="/pictures/date.png" type="image"> <!--Подключение иконки-->
+
+    <!--Шрифт-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="login-form">
+        <h1>Вход</h1> <!--Заголовок-->
+
+        <!--Поля-->
+        <input type="text" id="inputLogin" name="input-login" placeholder="Имя" required> <!--Имя бязательно-->
+        <input type="text" id="inputIdentifier" name="input-identifier" placeholder="Почта или номер (без кода страны)"
+            required><!--Номер или почта обязательны-->
+
+        <!--Класс паролей для работы с их видимостью и правилами для них-->
+        <br>
+        <div class="password-wrapper">
+            <input type="password" id="inputPassword" name="input-password" placeholder="Пароль" autocomplete="off"
+                required><!--Пароль-->
+            <div class="lock-icon" id="lockIcon"><!--Иконка с помощью векторного рисунка-->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="11" width="18" height="11" rx="2" />
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                </svg>
+            </div>
+        </div>
+
+        <!-- Yandex SmartCaptcha -->
+  <div id="captcha-container" style="margin: 20px 0;"></div>
+        <br><button type="button" class="btn-login" id="btnLogin">Войти</button>
+        <a href="/html/index.html">У меня еще нет аккаунта</a><!--Перенаправление на страницу регистрации-->
+    </div>
+
+    <footer>
+        <!--axios-->
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="/js/login.js"></script> <!--Скрипт входа-->
+        <script src="/js/passwordToggle.js"></script><!--Скрипт паролей-->
+        <!-- Подключаем SmartCaptcha -->
+<script src="https://smartcaptcha.yandexcloud.net/captcha.js" defer></script>
+    </footer>
+</body>
+
+</html>

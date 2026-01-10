@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Профиль</title>
+  <link rel="stylesheet" type="text/css" href="/css/profile.css" />
+  <link rel="icon" href="/pictures/profile.png" type="image/png" />
+
+  <!--Шрифт-->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+  <div class="profile-form">
+    <h1>Профиль</h1>
+
+    <div class="profile-columns">
+      <!--Базовая информация-->
+      <div class="basic-data">
+
+        <!--Контейнер аватарки-->
+        <div class="user-avatar" id="avatarContainer">
+          <img src="/pictures/user.png" alt="Аватар" class="avatar-picture" id="avatarPicture" />
+          <input type="file" id="avatarUpload" accept="image/*" style="display: none;" />
+          <label for="avatarUpload" id="changeAvatarBtn" class="change-avatar-btn">Сменить аватар</label>
+        </div>
+
+        <!--Базовая информация-->
+        <div class="basic-info">
+          <p><strong>Имя:</strong> <span id="userName">—</span></p>
+          <p><strong>Почта:</strong> <span id="userEmail">—</span></p>
+          <p><strong>Телефон:</strong> <span id="userPhone">—</span></p>
+          <p><strong>Дата регистрации:</strong> <span id="regDate">—</span></p>
+          <p><strong>Настроение:</strong> <span id="moodDisplay">—</span></p>
+          <p><strong>Цитата:</strong> <span id="quoteDisplay">—</span></p>
+        </div>
+
+        <!--Контейнер кнопок-->
+        <div class="personal-data">
+          <div class="btn-group">
+            <button id="editBtn" class="btn-edit">Изменить</button>
+            <button id="btnLogout" class="btn-logout">Выйти</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Форма редактирования-->
+  <div id="editForm" class="edit-form" style="display: none;">
+    <h2>Редактировать профиль</h2>
+    <div class="form-section">
+      <div class="form-row">
+        <label>Цитата:</label>
+        <textarea id="editQuote" rows="2" placeholder="Напишите цитату..."></textarea>
+      </div>
+
+      <div class="form-row">
+        <label>Настроение:</label>
+        <select id="editMood">
+          <option value="Хорошее">Хорошее</option>
+          <option value="Спокойное">Спокойное</option>
+          <option value="Нейтральное">Нейтральное</option>
+          <option value="Грустное">Грустное</option>
+          <option value="Злое">Злое</option>
+        </select>
+      </div>
+
+      <div class="form-row">
+        <label>Телефон:</label>
+        <input type="tel" id="editPhone" placeholder="+7 (012) 345-67-89" />
+      </div>
+
+      <!--блок изменения пароля- скрыт по умолчанию-->
+      <div id="passwordSection" class="form-section" style="display: none;">
+        <h3>Изменить пароль</h3>
+        <div class="form-row">
+          <label>Старый пароль:</label>
+          <input type="password" id="oldPassword" placeholder="Введите текущий пароль" autocomplete="off" />
+        </div>
+        <div class="form-row">
+          <label>Новый пароль:</label>
+          <input type="password" id="newPassword" placeholder="Новый пароль" autocomplete="off" />
+        </div>
+        <div class="form-row">
+          <label>Подтвердите новый пароль:</label>
+          <input type="password" id="confirmNewPassword" placeholder="Повторите новый пароль" autocomplete="off" />
+        </div>
+      </div>
+
+      <!--кнопка изменения пароля-->
+      <div class="form-row" style="text-align: center; margin-top: 5px;">
+        <button type="button" id="togglePasswordBtn" class="btn-password-toggle">
+          Изменить пароль
+        </button>
+      </div>
+    </div>
+    <!--Кнопки настроек-->
+    <div class="form-actions">
+      <button type="button" id="cancelBtn" class="btn-cancel">Назад</button>
+      <button type="button" id="updateBtn" class="btn-update">Сохранить</button>
+    </div>
+  </div>
+
+  <!--Размытый фон-->
+  <div id="overlay" class="overlay"></div>
+
+  <footer>
+    <!--axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/js/profile.js"></script>
+    <script src="/js/logout.js"></script>
+  </footer>
+</body>
+
+</html>
