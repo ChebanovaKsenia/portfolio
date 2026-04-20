@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Галерея с увеличением</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Галерея</h1>
+        <div class="gallery">
+            <img src="https://picsum.photos/200/150?random=1" alt="Thumb 1" class="thumb">
+            <img src="https://picsum.photos/200/150?random=2" alt="Thumb 2" class="thumb">
+            <img src="https://picsum.photos/200/150?random=3" alt="Thumb 3" class="thumb">
+            <img src="https://picsum.photos/200/150?random=4" alt="Thumb 4" class="thumb">
+        </div>
+    </div>
+
+    <!-- Оверлей для увеличенного изображения -->
+    <div id="gallery-overlay" class="overlay">
+        <span class="close-btn">&times;</span>
+        <img id="overlay-img" src="" alt="Large">
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

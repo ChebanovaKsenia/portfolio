@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+    margin: 20px;
+}
+
+body {
+    font-family: system-ui, sans-serif;
+    background: #f8f9fa;
+}
+
+#search {
+    padding: 10px;
+    width: 100%;
+    max-width: 300px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    max-width: 300px;
+    margin-top: 10px;
+}
+
+li {
+    background: white;
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+}
+
+li:hover {
+    background: #f1f5f9;
+}

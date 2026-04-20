@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор формы</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Калькулятор</h1>
+        <form class="calc-form">
+            <div class="input-group">
+                <label>Товар 1</label>
+                <input type="number" class="calc-input" data-name="Товар 1" placeholder="0" min="0">
+            </div>
+            <div class="input-group">
+                <label>Товар 2</label>
+                <input type="number" class="calc-input" data-name="Товар 2" placeholder="0" min="0">
+            </div>
+            <div class="input-group">
+                <label>Товар 3</label>
+                <input type="number" class="calc-input" data-name="Товар 3" placeholder="0" min="0">
+            </div>
+            <div class="total-block">
+                <span>Итого:</span>
+                <strong id="result">0.00 ₽</strong>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

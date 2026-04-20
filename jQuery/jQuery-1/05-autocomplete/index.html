@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Автозаполнение городов</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Поиск города</h1>
+        <div class="search-box">
+            <input type="text" id="city-input" placeholder="Начни вводить название города..." autocomplete="off">
+            <ul id="suggestions"></ul>
+        </div>
+        <p class="hint">Попробуй: Москва, СПб, Новосиб, Екат, Казань</p>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

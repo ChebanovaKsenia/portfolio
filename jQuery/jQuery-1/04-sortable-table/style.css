@@ -1,0 +1,34 @@
+* {
+    box-sizing: border-box;
+    margin: 20px;
+}
+
+body {
+    font-family: system-ui, sans-serif;
+    background: #f8f9fa;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 600px;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+th,
+td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+th {
+    background: #f1f5f9;
+    cursor: pointer;
+    user-select: none;
+}
+
+th:hover {
+    background: #e2e8f0;
+}
